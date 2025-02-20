@@ -20,12 +20,12 @@ export default function App() {
   };
 
   const handleSubmit = () => {
-    alergiasCalculadas = "Eres alérgico a";
-    scoreAlergias = inputValue % 256;
+    var alergiasCalculadas = "Eres alérgico a";
+    var scoreAlergias = inputValue % 256;
     if (scoreAlergias == 0) {
       alergiasCalculadas = "No tienes alergias";
     } else {
-      i = 0;
+      var i = 0;
       while (scoreAlergias > 0) {
         if (scoreAlergias % 2 == 1) {
           if (i == 0) {
@@ -42,19 +42,20 @@ export default function App() {
   };
   return (
     <div className="App">
-      <h1>Calculador de alergias</h1>
+      <h1 class="titulo">Calculador de alergias</h1>
       <div>
         <input
+          class="inputScore"
           type="number"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Introduce un valor"
         />
       </div>
-      <button id="botonCalcular" onClick={handleSubmit}>
+      <button class="botonCalcular" onClick={handleSubmit}>
         Calcular
       </button>
-      {<p id="parrafoResultado">{resultado}</p>}
+      {<p class="parrafoResultado">{resultado}</p>}
     </div>
   );
 }
