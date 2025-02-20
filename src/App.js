@@ -65,38 +65,14 @@ export default function App() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{alergias[0].split(" ")[1]}</td>
-              <td>{2 ** 0}</td>
-            </tr>
-            <tr>
-              <td>{alergias[1].split(" ")[1]}</td>
-              <td>{2 ** 1}</td>
-            </tr>
-            <tr>
-              <td>{alergias[2].split(" ")[1]}</td>
-              <td>{2 ** 2}</td>
-            </tr>
-            <tr>
-              <td>{alergias[3].split(" ")[1]}</td>
-              <td>{2 ** 3}</td>
-            </tr>
-            <tr>
-              <td>{alergias[4].split(" ")[1]}</td>
-              <td>{2 ** 4}</td>
-            </tr>
-            <tr>
-              <td>{alergias[5].split(" ")[1]}</td>
-              <td>{2 ** 5}</td>
-            </tr>
-            <tr>
-              <td>{alergias[6].split(" ")[1]}</td>
-              <td>{2 ** 6}</td>
-            </tr>
-            <tr>
-              <td>{alergias[7].split(" ")[1]}</td>
-              <td>{2 ** 7}</td>
-            </tr>
+            {alergias.map((alergia) => {
+              return (
+                <tr>
+                  <td>{alergia.split(" ")[1]}</td>
+                  <td>{2 ** alergias.indexOf(alergia)}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
